@@ -1,13 +1,14 @@
-export const MyTestFunction = (name:string)=>{
+export const MyTestFunction = (name: string) => {
   return `hello ${name}`;
-}
+};
 
-
-const main = async ()=>{
+const main = async () => {
   console.log(MyTestFunction('world'));
   console.log(MyTestFunction('Edeno'));
-}
+};
 
-main().catch(console.error).finally(()=>{
-  console.log('done');
-});
+main()
+  .catch(console.error)
+  .finally(() => {
+    console.log('done');
+  });

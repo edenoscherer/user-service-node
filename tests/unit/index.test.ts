@@ -1,4 +1,4 @@
-import { MyTestFunction } from "../../src";
+import { MyTestFunction } from '../../src';
 
 describe('MyTestFunction', () => {
   it('should return greeting with provided name', () => {
