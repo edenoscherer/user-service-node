@@ -19,12 +19,14 @@
     "prepare": "husky || true"
   },
   "dependencies": {
+    "class-validator": "^0.14.1",
     "dotenv": "^16.4.5",
     "mysql2": "^3.11.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
+    "@faker-js/faker": "^9.1.0",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.8.6",
     "@typescript-eslint/eslint-plugin": "^8.12.2",
