@@ -1,5 +1,4 @@
 import dotenv from 'dotenv';
-import { existsSync } from 'fs';
 import { join } from 'path';
 
 const envFile =
@@ -8,8 +7,9 @@ const envFile =
     : join(__dirname, '..', '..', '.env');
 
 dotenv.config({ path: envFile });
-console.log(envFile, existsSync(envFile));
 export const ENV = {
+  NODE_ENV: process.env.NODE_ENV ?? 'dev',
+  PORT: process.env.PORT?.length ? parseInt(process.env.PORT) : 3000,
   DB_HOST: process.env.DB_HOST ?? 'localhost',
   DB_USER: process.env.DB_USER ?? 'user_service',
   DB_PASSWORD: process.env.DB_PASSWORD ?? 'user@service',

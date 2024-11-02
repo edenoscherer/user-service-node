@@ -1,14 +1,5 @@
-export const MyTestFunction = (name: string) => {
-  return `hello ${name}`;
-};
+import { ENV } from './config/env';
+import { Server } from './services/server';
 
-const main = async () => {
-  console.log(MyTestFunction('world'));
-  console.log(MyTestFunction('Edeno'));
-};
-
-main()
-  .catch(console.error)
-  .finally(() => {
-    console.log('done');
-  });
+const server = new Server();
+server.start(ENV.PORT);

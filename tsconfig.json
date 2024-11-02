@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "sourceMap": true,
-    "rootDir": "./src",
     "outDir": "./dist",
     "declaration": true,
     "noUnusedLocals": true,
