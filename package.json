@@ -19,6 +19,7 @@
     "prepare": "husky || true"
   },
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "class-validator": "^0.14.1",
     "dotenv": "^16.4.5",
     "mysql2": "^3.11.3"
@@ -27,6 +28,7 @@
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@faker-js/faker": "^9.1.0",
+    "@types/bcrypt": "^5.0.2",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.8.6",
     "@typescript-eslint/eslint-plugin": "^8.12.2",
