@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Database } from '../../../src/interfaces/database';
+import { Database } from '../../../src/services/db';
 import { MigrationService } from '../../../src/services/migration.service';
 
 describe('MigrationService', () => {

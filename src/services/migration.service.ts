@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
-import { Database } from '../interfaces/database';
 import { Migration } from '../entities/migration';
+import { Database } from './db';
 
 export class MigrationService {
   private readonly db: Database;
