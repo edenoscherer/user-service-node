@@ -6,6 +6,7 @@
   "author": "Edeno Scherer <edenoscherer@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "migrate": "ts-node src/migrate.ts",
     "build": "tsc",
     "lint": "eslint --ext .js,.ts .",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
@@ -17,7 +18,9 @@
     "test:coveralls": "npm run test:ci && coveralls < coverage/lcov.info",
     "prepare": "husky || true"
   },
-  "dependencies": {},
+  "dependencies": {
+    "mysql2": "^3.11.3"
+  },
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
