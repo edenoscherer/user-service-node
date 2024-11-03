@@ -8,18 +8,17 @@ export class CreateUserMysqlRepository implements CreateUserRepository {
     // const db = (await connection.getConnection()) as unknown as Database;
     const conn = await connection.getConnection();
     const sql = `INSERT INTO user_service.users
-              (cpf, name, birth_date, address, password_hash, status, created_at, created_by)
-            VALUES(:cpf, :name, :birthDate, :address, :passwordHash, :status, :createdAt, :createdBy);`;
-    const res = await conn.query<ResultSetHeader>(sql, {
-      cpf: user.cpf,
-      name: user.name,
-      birthDate: user.birthDate,
-      address: JSON.stringify(user.address),
-      passwordHash: user.password,
-      status: user.status,
-      createdAt: user?.createdAt,
-      createdBy: user?.createdBy
-    });
+              (cpf, name, birth_date, address, password_hash, status, created_by)
+            VALUES(?, ?, ?, ?, ?, ?, ?);`;
+    const res = await conn.query<ResultSetHeader>(sql, [
+      user.cpf,
+      user.name,
+      user.birthDate,
+      JSON.stringify(user.address),
+      user.password,
+      user.status,
+      user?.createdBy
+    ]);
 
     return res[0].insertId;
   }

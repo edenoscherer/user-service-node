@@ -1,6 +1,6 @@
 import express from 'express';
 import morgan from 'morgan';
-import { AppRouter } from '../routes';
+import { AppRouter } from '../routes/routes';
 
 export class Server {
   private app: express.Application;

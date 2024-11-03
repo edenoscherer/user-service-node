@@ -1,0 +1,17 @@
+POST http://localhost:3000/users HTTP/1.1
+content-type: application/json
+
+{
+  "cpf": "90409530853",
+  "name": "Caio Batista",
+  "birthDate": "1981-02-02",
+  "address": {
+    "number": "280",
+    "street": "Alessandra Rua",
+    "city": "Isabelly do Sul",
+    "state": "BA",
+    "zipCode": "37823-147"
+  },
+  "password": "Edeno@123",
+  "status": "ACTIVE"
+}
