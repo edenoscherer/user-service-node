@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { ExpressControllerFactory } from '../services/makeExpressController';
+import { ExpressControllerFactory } from '../services/expressControllerFactory';
 import { CreateUserControllerFactory } from '../factories/user/createUserController';
 
 export class UserRoutes {
