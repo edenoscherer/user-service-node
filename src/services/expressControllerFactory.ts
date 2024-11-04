@@ -28,6 +28,6 @@ export class ExpressControllerFactory {
 
   private async handleRequestError(res: Response, error: unknown): Promise<void> {
     const errorResponse = createErrorResponse(error);
-    res.status(errorResponse.statusCode).send(errorResponse.body);
+    res.status(errorResponse.statusCode).json(errorResponse.body);
   }
 }
