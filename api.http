@@ -30,4 +30,7 @@ GET  http://localhost:3000/users?name=scherer HTTP/1.1
 GET  http://localhost:3000/users?status=ACTIVE HTTP/1.1
 ###
 GET  http://localhost:3000/users?cpf=20000000000 HTTP/1.1
+
 ----------------------------------------------------------------
+###
+GET  http://localhost:3000/users/5 HTTP/1.1

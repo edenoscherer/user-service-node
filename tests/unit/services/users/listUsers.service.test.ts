@@ -1,31 +1,13 @@
 import { ListUsersService } from '../../../../src/services/users/listUsers.service';
 import { ListUsersRepository } from '../../../../src/repositories/users/interfaces/listUsers.repository';
-import { User, UserStatus } from '../../../../src/entities/user';
-import { faker } from '@faker-js/faker/locale/pt_BR';
+import { UserStatus } from '../../../../src/entities/user';
 import { ListUsersParams } from '../../../../src/services/users/listUsers.service';
+import { generateUser } from '../../../factories/generateUser';
 
 describe('ListUsersService', () => {
   let listUsersService: ListUsersService;
   let listUsersRepository: ListUsersRepository;
   let params: ListUsersParams;
-
-  const generateUser = (): User => ({
-    id: faker.number.int(),
-    cpf: faker.string.numeric(11),
-    name: faker.person.fullName(),
-    birthDate: faker.date.birthdate(),
-    address: {
-      number: faker.location.buildingNumber(),
-      street: faker.location.street(),
-      city: faker.location.city(),
-      state: faker.location.state({ abbreviated: true }),
-      zipCode: faker.location.zipCode()
-    },
-    password: faker.internet.password(),
-    status: faker.helpers.enumValue(UserStatus),
-    createdAt: new Date(),
-    createdBy: 1
-  });
 
   beforeEach(() => {
     params = {};
