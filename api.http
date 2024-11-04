@@ -2,16 +2,32 @@ POST http://localhost:3000/users HTTP/1.1
 content-type: application/json
 
 {
-  "cpf": "90409530853",
-  "name": "Caio Batista",
-  "birthDate": "1981-02-02",
+  "cpf": "20000000000",
+  "name": "João Luiz Scherer",
+  "birthDate": "1985-12-04",
   "address": {
-    "number": "280",
-    "street": "Alessandra Rua",
-    "city": "Isabelly do Sul",
-    "state": "BA",
-    "zipCode": "37823-147"
+    "number": "178",
+    "street": "Guilherme Anschau",
+    "city": "Quatro Pontes",
+    "state": "PR",
+    "zipCode": "85940-000"
   },
-  "password": "Edeno@123",
-  "status": "ACTIVE"
+  "password": "admin@123",
+  "status": "DELETED"
 }
+
+----------------------------------------------------------------
+###
+
+GET  http://localhost:3000/users HTTP/1.1
+###
+GET  http://localhost:3000/users?limit=2 HTTP/1.1
+###
+GET  http://localhost:3000/users?limit=2&page=2 HTTP/1.1
+###
+GET  http://localhost:3000/users?name=scherer HTTP/1.1
+###
+GET  http://localhost:3000/users?status=ACTIVE HTTP/1.1
+###
+GET  http://localhost:3000/users?cpf=20000000000 HTTP/1.1
+----------------------------------------------------------------

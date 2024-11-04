@@ -5,7 +5,6 @@ import { CreateUserRepository } from './interfaces/createUser.repository';
 
 export class CreateUserMysqlRepository implements CreateUserRepository {
   async createUser(user: User): Promise<number> {
-    // const db = (await connection.getConnection()) as unknown as Database;
     const conn = await connection.getConnection();
     const sql = `INSERT INTO user_service.users
               (cpf, name, birth_date, address, password_hash, status, created_by)

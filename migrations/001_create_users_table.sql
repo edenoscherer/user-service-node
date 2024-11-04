@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS users (
     birth_date DATE NOT NULL,
     address JSON NOT NULL,
     password_hash VARCHAR(255) NOT NULL,
-    status ENUM('Active', 'Removed') DEFAULT 'Active',
+    status VARCHAR(255) NOT NULL,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     created_by INT,
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
