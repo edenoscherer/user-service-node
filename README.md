@@ -35,6 +35,24 @@ Para executar as migrações, rode:
 
 npm run migrate
 
+### Executando o Projeto
+
+Para executar o projeto, siga os passos abaixo:
+
+1. Instale as dependências:
+
+   `npm install`
+
+2. Execute o projeto:
+   `npm run dev` ou `npm run start`
+
+### Informações de Login
+
+Para realizar o login, utilize as credenciais padrão:
+
+- CPF: `111111`
+- Senha: `admin@123`
+
 ### Documentação da API com Swagger
 
 Acesse http://localhost:3000/api-docs para visualizar e testar a documentação da API gerada automaticamente pelo Swagger.
@@ -43,18 +61,7 @@ Acesse http://localhost:3000/api-docs para visualizar e testar a documentação 
 
 Para rodar testes unitários e de integração:
 
-npm test
-
-### Conversão para TypeScript
-
-Caso queira usar TypeScript:
-
-1. Instale as dependências:
-
-   npm install typescript ts-node @types/node @types/express @types/bcryptjs @types/jsonwebtoken --save-dev
-
-2. Renomeie os arquivos `.js` para `.ts` e ajuste as tipagens onde necessário.
-3. Compile o projeto com `tsc` ou use `ts-node` para rodar diretamente com TypeScript.
+`npm run test`
 
 ### Endpoints Principais
 
