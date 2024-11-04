@@ -2,7 +2,7 @@ import {
   ListUsersCotroller,
   ListUsersParams
 } from '../../../../src/controllers/users/listUsers.controller';
-import { ListUsersService } from '../../../../src/services/listUsers.service';
+import { ListUsersService } from '../../../../src/services/users/listUsers.service';
 import { HttpRequest } from '../../../../src/controllers/controller';
 import { UserStatus } from '../../../../src/entities/user';
 

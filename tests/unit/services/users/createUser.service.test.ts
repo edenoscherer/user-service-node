@@ -1,8 +1,8 @@
-import { User, UserStatus } from '../../../src/entities/user';
-import { CreateUserService } from '../../../src/services/createUser.service';
-import { CreateUserRepository } from '../../../src/repositories/users/interfaces/createUser.repository';
+import { User, UserStatus } from '../../../../src/entities/user';
+import { CreateUserService } from '../../../../src/services/users/createUser.service';
+import { CreateUserRepository } from '../../../../src/repositories/users/interfaces/createUser.repository';
 import { faker } from '@faker-js/faker/locale/pt_BR';
-import { EncryptionService } from '../../../src/services/encryption.service';
+import { EncryptionService } from '../../../../src/services/encryption.service';
 
 const generateUser = (): User => {
   return {

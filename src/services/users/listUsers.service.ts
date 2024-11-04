@@ -1,5 +1,5 @@
-import { User, UserStatus } from '../entities/user';
-import { ListUsersRepository } from '../repositories/users/interfaces/listUsers.repository';
+import { User, UserStatus } from '../../entities/user';
+import { ListUsersRepository } from '../../repositories/users/interfaces/listUsers.repository';
 
 export interface ListUsersParams {
   name?: string;

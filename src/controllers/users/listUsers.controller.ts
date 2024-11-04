@@ -1,5 +1,5 @@
 import { UserStatus } from '../../entities/user';
-import { ListUsersResult, ListUsersService } from '../../services/listUsers.service';
+import { ListUsersResult, ListUsersService } from '../../services/users/listUsers.service';
 import {
   Controller,
   createErrorResponse,

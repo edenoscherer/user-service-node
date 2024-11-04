@@ -1,5 +1,5 @@
 import { User } from '../../entities/user';
-import { CreateUserService } from '../../services/createUser.service';
+import { CreateUserService } from '../../services/users/createUser.service';
 import {
   Controller,
   createErrorResponse,

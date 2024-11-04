@@ -1,6 +1,6 @@
-import { User } from '../entities/user';
-import { CreateUserRepository } from '../repositories/users/interfaces/createUser.repository';
-import { EncryptionService } from './encryption.service';
+import { User } from '../../entities/user';
+import { CreateUserRepository } from '../../repositories/users/interfaces/createUser.repository';
+import { EncryptionService } from '../encryption.service';
 
 export class CreateUserService {
   constructor(private readonly createUserRepository: CreateUserRepository) {}

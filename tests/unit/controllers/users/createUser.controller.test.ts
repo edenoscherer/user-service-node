@@ -1,5 +1,5 @@
 import { CreateUserController } from '../../../../src/controllers/users/createUser.controller';
-import { CreateUserService } from '../../../../src/services/createUser.service';
+import { CreateUserService } from '../../../../src/services/users/createUser.service';
 import { User, UserStatus } from '../../../../src/entities/user';
 import { faker } from '@faker-js/faker/locale/pt_BR';
 import { HttpRequest } from '../../../../src/controllers/controller';

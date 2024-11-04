@@ -1,8 +1,8 @@
-import { ListUsersService } from '../../../src/services/listUsers.service';
-import { ListUsersRepository } from '../../../src/repositories/users/interfaces/listUsers.repository';
-import { User, UserStatus } from '../../../src/entities/user';
+import { ListUsersService } from '../../../../src/services/users/listUsers.service';
+import { ListUsersRepository } from '../../../../src/repositories/users/interfaces/listUsers.repository';
+import { User, UserStatus } from '../../../../src/entities/user';
 import { faker } from '@faker-js/faker/locale/pt_BR';
-import { ListUsersParams } from '../../../src/services/listUsers.service';
+import { ListUsersParams } from '../../../../src/services/users/listUsers.service';
 
 describe('ListUsersService', () => {
   let listUsersService: ListUsersService;
