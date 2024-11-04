@@ -10,7 +10,8 @@ describe('GetUserService', () => {
 
   beforeEach(() => {
     repository = {
-      getUser: jest.fn()
+      getUser: jest.fn(),
+      getUserByCpf: jest.fn()
     };
     getUserService = new GetUserService(repository);
   });

@@ -45,6 +45,7 @@ describe('DeleteUserService', () => {
 
   it('should throw error when repository delete fails', async () => {
     const mockUser: User = generateUser();
+    mockUser.status = UserStatus.ACTIVE;
     getUserService.getUser.mockResolvedValue(mockUser);
     userRepository.deleteUser.mockRejectedValue(new Error('Database error'));
 
