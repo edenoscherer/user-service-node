@@ -5,7 +5,7 @@ import {
   ParamsCountUsers,
   ParamsListUsers
 } from './interfaces/listUsers.repository';
-import { User, UserDB } from '../../entities/user';
+import { User, UserDB, userDBToUser } from '../../entities/user';
 
 interface CountResult extends RowDataPacket {
   count: number;
@@ -31,11 +31,7 @@ export class ListUsersMysqlRepository implements ListUsersRepository {
     const conn = await this.getConnection();
     const res = await conn.query<UserDB[]>(sql, where.whereParams);
     return res[0].map(user => {
-      return {
-        ...user,
-        password_hash: undefined,
-        password: undefined
-      };
+      return userDBToUser(user);
     });
   }
 

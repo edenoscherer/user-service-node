@@ -45,10 +45,13 @@ const getErrorType = (error: Error): string => {
   return error.constructor.name || 'InternalServerError';
 };
 
-export const createErrorResponse = (error: unknown): HttpResponse<ErrorResponse> => {
+export const createErrorResponse = (
+  error: unknown,
+  statusCode?: number
+): HttpResponse<ErrorResponse> => {
   if (error instanceof Error) {
     return {
-      statusCode: 500,
+      statusCode: statusCode ?? 500,
       body: {
         error: getErrorType(error),
         message: error.message,
@@ -58,7 +61,7 @@ export const createErrorResponse = (error: unknown): HttpResponse<ErrorResponse>
   }
 
   return {
-    statusCode: 500,
+    statusCode: statusCode ?? 500,
     body: {
       error: 'UnknownError',
       message: 'An unexpected error occurred'
