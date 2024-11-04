@@ -14,5 +14,7 @@ export const ENV = {
   DB_USER: process.env.DB_USER ?? 'user_service',
   DB_PASSWORD: process.env.DB_PASSWORD ?? 'user@service',
   DB_NAME: process.env.DB_NAME ?? 'user_service',
-  DB_PORT: process.env.DB_PORT?.length ? parseInt(process.env.DB_PORT) : 3306
+  DB_PORT: process.env.DB_PORT?.length ? parseInt(process.env.DB_PORT) : 3306,
+  JWT_SECRET: process.env.JWT_SECRET ?? 'secret',
+  JWT_EXPIRATION: process.env.JWT_EXPIRATION ?? '15m'
 };

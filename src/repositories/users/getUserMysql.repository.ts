@@ -26,4 +26,16 @@ export class GetUserMysqlRepository implements GetUserRepository {
     const user = res[0][0];
     return userDBToUser(user, showPass);
   }
+
+  async getUserByCpf(cpf: string, showPass = false): Promise<User> {
+    const sql = `SELECT * from user_service.users
+          where cpf = ? LIMIT 1`;
+    const conn = await this.getConnection();
+    const res = await conn.query<UserDB[]>(sql, [cpf]);
+    if (!res[0].length) {
+      throw new Error('User not found');
+    }
+    const user = res[0][0];
+    return userDBToUser(user, showPass);
+  }
 }

@@ -2,7 +2,7 @@ POST http://localhost:3000/users HTTP/1.1
 content-type: application/json
 
 {
-  "cpf": "20000000000",
+  "cpf": "20000000002",
   "name": "João Luiz Scherer",
   "birthDate": "1985-12-04",
   "address": {
@@ -13,7 +13,7 @@ content-type: application/json
     "zipCode": "85940-000"
   },
   "password": "admin@123",
-  "status": "DELETED"
+  "status": "ACTIVE"
 }
 
 
@@ -49,5 +49,13 @@ content-type: application/json
     "state": "PR",
     "zipCode": "85940-000"
   }
+}
+### -------------------------------------------------------------------------------------------------------------
+POST  http://localhost:3000/auth/login HTTP/1.1
+content-type: application/json
+
+{
+  "cpf": "20000000002",
+  "password": "admin@123"
 }
 

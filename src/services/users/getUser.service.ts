@@ -6,4 +6,8 @@ export class GetUserService {
   async getUser(id: number, showPass: boolean): Promise<User> {
     return this.repository.getUser(id, showPass);
   }
+
+  async getUserByCpf(cpf: string, showPass: boolean): Promise<User> {
+    return this.repository.getUserByCpf(cpf, showPass);
+  }
 }
