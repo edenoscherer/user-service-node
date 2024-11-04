@@ -1,9 +1,10 @@
 POST http://localhost:3000/users HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImlhdCI6MTczMDczMjk2OSwiZXhwIjoxNzMwODE5MzY5fQ.Haa8dTZIiCcEMzxkD7pNutm3KxPztHWfp_jfMEEpj2A
 
 {
-  "cpf": "20000000002",
-  "name": "João Luiz Scherer",
+  "cpf": "1111111",
+  "name": "Administrador Edeno",
   "birthDate": "1985-12-04",
   "address": {
     "number": "178",
@@ -33,11 +34,12 @@ GET  http://localhost:3000/users?cpf=20000000000 HTTP/1.1
 
 ### -------------------------------------------------------------------------------------------------------------
 GET  http://localhost:3000/users/5 HTTP/1.1
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImlhdCI6MTczMDczMjk2OSwiZXhwIjoxNzMwODE5MzY5fQ.Haa8dTZIiCcEMzxkD7pNutm3KxPztHWfp_jfMEEpj2A
 
 ### -------------------------------------------------------------------------------------------------------------
 PUT  http://localhost:3000/users/9 HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImlhdCI6MTczMDczMjk2OSwiZXhwIjoxNzMwODE5MzY5fQ.Haa8dTZIiCcEMzxkD7pNutm3KxPztHWfp_jfMEEpj2A
 
 {
   "cpf": "20000001",
@@ -55,7 +57,7 @@ POST  http://localhost:3000/auth/login HTTP/1.1
 content-type: application/json
 
 {
-  "cpf": "20000000002",
+  "cpf": "1111111",
   "password": "admin@123"
 }
 

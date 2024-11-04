@@ -1,6 +1,12 @@
 import { ENV } from '../config/env';
 import jwt from 'jsonwebtoken';
 
+interface TokenPayload {
+  id: number;
+  iat: number;
+  exp: number;
+}
+
 export class JwtService {
   private readonly JWT_SECRET: string;
   private readonly JWT_EXPIRATION: string;
@@ -16,8 +22,8 @@ export class JwtService {
   }
 
   verifyToken(token: string): { id: number } | false {
-    const decoded = jwt.verify(token, this.JWT_SECRET) as { id: number };
-    if (decoded.id) {
+    const decoded = jwt.verify(token, this.JWT_SECRET) as TokenPayload | undefined;
+    if (decoded?.id) {
       return { id: decoded.id };
     }
     return false;

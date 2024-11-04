@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { UserRoutes } from './user.routes';
 import { AuthRoute } from './auth.route';
+import { authMiddleware } from '../middlewares/auth.middleware';
 
 export class AppRouter {
   private router: Router;
@@ -15,7 +16,7 @@ export class AppRouter {
   }
 
   private setupRoutes(): void {
-    this.router.use('/users/', this.userRoutes.getRoutes());
+    this.router.use('/users/', authMiddleware, this.userRoutes.getRoutes());
     this.router.use('/auth/', this.authRoutes.getRoutes());
     this.setupHealthCheck();
   }

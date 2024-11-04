@@ -1,0 +1,2 @@
+INSERT INTO user_service.users (cpf,name,birth_date,address,password_hash,status,created_at,created_by,updated_at,updated_by,deleted_at,deleted_by) VALUES
+	 ('1111111','Administrador Edeno','1985-12-04','{"city": "Quatro Pontes", "state": "PR", "number": "178", "street": "Guilherme Anschau", "zipCode": "85940-000"}','$2b$10$tj4xp3zdqSOeng4QXTRHKevkMUpy9HHbFkMjGndUHaKbkGPQ7rMo2','ACTIVE','2024-11-04 15:19:02',NULL,'2024-11-04 15:20:45',NULL,NULL,NULL);

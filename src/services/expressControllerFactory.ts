@@ -22,7 +22,8 @@ export class ExpressControllerFactory {
       body: req.body,
       queryParams: req.query,
       params: req.params,
-      headers: req.headers
+      headers: req.headers,
+      user: req.userId ? { id: req.userId } : undefined
     });
   }
 

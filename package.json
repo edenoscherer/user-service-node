@@ -39,7 +39,6 @@
     "@types/http-errors": "^2.0.4",
     "@types/jest": "^29.5.14",
     "@types/jsonwebtoken": "^9.0.7",
-    "@types/mime": "^4.0.0",
     "@types/morgan": "^1.9.9",
     "@types/node": "^22.8.6",
     "@types/range-parser": "^1.2.7",
