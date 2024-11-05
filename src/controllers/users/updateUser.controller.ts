@@ -1,8 +1,10 @@
 import { User } from '../../entities/user';
 import { UpdateUserService } from '../../services/users/updateUser.service';
+import { updateUserSchema } from '../../validations/users/updateUser.schema';
 import {
   Controller,
   createErrorResponse,
+  createValidateErrorResponse,
   ErrorResponse,
   HttpRequest,
   HttpResponse
@@ -15,13 +17,13 @@ export class UpdateUserController implements Controller {
     req: HttpRequest<Partial<User>, undefined, { id: string }>
   ): Promise<HttpResponse<boolean | ErrorResponse>> {
     try {
-      const id = req.params.id;
-      const parsedId = parseInt(id);
-      if (id.trim().length === 0 || isNaN(parsedId) || parsedId < 1) {
-        return createErrorResponse(Error('Invlid user ID'), 400);
+      const { error } = updateUserSchema.validate({ id: req.params.id, ...req.body });
+      if (error) {
+        return createValidateErrorResponse(error);
       }
+      const id = parseInt(req.params.id);
       const user = req.body;
-      const result = await this.service.updateUser(parseInt(id), user, req.user?.id);
+      const result = await this.service.updateUser(id, user, req.user?.id);
 
       return {
         statusCode: 200,

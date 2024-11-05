@@ -16,8 +16,7 @@ export class LoginService {
         return this.jwtService.generateToken(user.id as number);
       }
       return false;
-    } catch (error) {
-      console.log(error);
+    } catch {
       return false;
     }
   }

@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { ValidationError } from 'joi';
 import { ENV } from '../config/env';
 import { User } from '../entities/user';
 
@@ -43,6 +44,18 @@ export type ErrorResponse = {
 
 const getErrorType = (error: Error): string => {
   return error.constructor.name || 'InternalServerError';
+};
+
+export const createValidateErrorResponse = (
+  error: ValidationError
+): HttpResponse<ErrorResponse> => {
+  return {
+    statusCode: 400,
+    body: {
+      error: 'Validation error',
+      message: error.details.map(detail => detail.message).join(', ')
+    }
+  };
 };
 
 export const createErrorResponse = (

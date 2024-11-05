@@ -6,7 +6,7 @@ export enum UserStatus {
   DELETED = 'DELETED'
 }
 
-interface Address {
+export interface Address {
   number?: string;
   street?: string;
   city?: string;
