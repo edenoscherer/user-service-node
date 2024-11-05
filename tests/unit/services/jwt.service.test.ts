@@ -27,7 +27,6 @@ describe('JwtService', () => {
   it('should verify and decode a valid token', () => {
     const token = jwtService.generateToken(userId);
     const decoded = jwtService.verifyToken(token);
-    console.log(decoded);
     expect(decoded).toBeDefined();
     expect((decoded as any).id).toBe(userId);
   });

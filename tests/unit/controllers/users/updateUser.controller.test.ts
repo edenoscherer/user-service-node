@@ -44,8 +44,8 @@ describe('UpdateUserController', () => {
 
     expect(response.statusCode).toBe(400);
     expect(response.body).toEqual({
-      error: 'Error',
-      message: 'Invlid user ID'
+      error: 'Validation error',
+      message: '"id" must be a number'
     });
   });
 
@@ -61,8 +61,8 @@ describe('UpdateUserController', () => {
 
     expect(response.statusCode).toBe(400);
     expect(response.body).toEqual({
-      error: 'Error',
-      message: 'Invlid user ID'
+      error: 'Validation error',
+      message: '"id" must be a number'
     });
   });
 
@@ -78,8 +78,8 @@ describe('UpdateUserController', () => {
 
     expect(response.statusCode).toBe(400);
     expect(response.body).toEqual({
-      error: 'Error',
-      message: 'Invlid user ID'
+      error: 'Validation error',
+      message: '"id" must be greater than or equal to 1'
     });
   });
 

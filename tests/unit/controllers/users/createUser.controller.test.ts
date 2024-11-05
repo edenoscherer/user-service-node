@@ -7,8 +7,12 @@ import { generateUser } from '../../../factories/generateUser';
 describe('CreateUserController', () => {
   let createUserController: CreateUserController;
   let createUserService: CreateUserService;
+  let requestUser: User;
 
   beforeEach(() => {
+    requestUser = generateUser();
+    delete requestUser.createdAt;
+    delete requestUser.createdBy;
     createUserService = {
       create: jest.fn()
     } as unknown as CreateUserService;
@@ -16,7 +20,6 @@ describe('CreateUserController', () => {
   });
 
   it('should return 201 with created user when successful', async () => {
-    const requestUser = generateUser();
     const loggedUserId = 123;
     const request: HttpRequest<User> = {
       body: requestUser,
@@ -40,7 +43,6 @@ describe('CreateUserController', () => {
   });
 
   it('should handle request without logged user', async () => {
-    const requestUser = generateUser();
     const request: HttpRequest<User> = {
       body: requestUser,
       queryParams: undefined,
@@ -63,7 +65,7 @@ describe('CreateUserController', () => {
 
   it('should return error response when service throws error', async () => {
     const request: HttpRequest<User> = {
-      body: generateUser(),
+      body: requestUser,
       queryParams: undefined,
       params: undefined,
       headers: {}
