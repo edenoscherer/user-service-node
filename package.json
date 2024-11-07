@@ -17,13 +17,16 @@
     "test:coveralls": "npm run test:ci && coveralls < coverage/lcov.info",
     "prepare": "husky || true"
   },
-  "dependencies": {},
+  "dependencies": {
+    "uuid": "^11.0.2"
+  },
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@eslint/js": "^9.13.0",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.8.6",
+    "@types/uuid": "^10.0.0",
     "@typescript-eslint/eslint-plugin": "^8.13.0",
     "@typescript-eslint/parser": "^8.13.0",
     "eslint": "^9.13.0",
@@ -37,6 +40,7 @@
     "prettier": "^3.3.3",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.6.3",
     "typescript-eslint": "^8.12.2"
   }
