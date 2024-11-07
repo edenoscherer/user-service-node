@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 export class UUID {
   private readonly _value: string;
 
-  constructor(value: string) {
+  private constructor(value: string) {
     this.validateUUID(value);
     this._value = value;
     Object.freeze(this);
@@ -20,8 +20,8 @@ export class UUID {
     }
   }
 
-  static create(): UUID {
-    return new UUID(uuidv4());
+  static create(value?: string): UUID {
+    return new UUID(value ?? uuidv4());
   }
 
   equals(other: UUID): boolean {
